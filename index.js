@@ -13,13 +13,13 @@ function epochTime(dates){
 
 // TODO: Buatlah fungsi createDate
 const createDate = (dates, posisi) => {
-  if(posisi){
-    let date = dates.slice(posisi)[0];
+  if(posisi!=null){
+    let date = dates[posisi];
     return epochTime(date);
   }
   let arrayDate = [];
   for(let counter=0;counter<dates.length;counter++){
-    arrayDate[counter]=epochTime(dates[counter]);
+    arrayDate.push(epochTime(dates[counter]));
   }
   return arrayDate.sort().join('-');
 };
